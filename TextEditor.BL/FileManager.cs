@@ -17,6 +17,8 @@ namespace TextEditor.BL
     public class FileManager : IFileManager
     {
         private readonly Encoding _defaultEncoding = Encoding.GetEncoding(1251);
+
+
         public bool IsExist(string Path)
         {
             bool isExist = File.Exists(Path);
@@ -28,7 +30,7 @@ namespace TextEditor.BL
             //  return content;
             return GetContent(filePath, _defaultEncoding);
         }
-        public string GetContent(string filePath, Encoding encoding)
+        public string GetContent(string filePath, Encoding encoding )
         {
             string content = File.ReadAllText(filePath, encoding);
             return content;
